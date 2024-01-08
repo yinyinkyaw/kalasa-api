@@ -1,0 +1,13 @@
+name: 🕕 Checking event status
+
+on:
+  schedule:
+    - cron: "* * * * *"
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 🚚 Checking...
+        run: php artisan schedule:run
+
